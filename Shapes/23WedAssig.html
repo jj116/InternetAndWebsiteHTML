@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<body onload="draw(); " >
+
+    <script type="text/javascript">
+      function exportToForm(a) {
+
+        document.getElementById('canvas1').style.display = 'none';
+        document.getElementById('canvas2').style.display = 'none';
+        document.getElementById('canvas3').style.display = 'none';
+        document.getElementById('canvas4').style.display = 'none';
+        document.getElementById('canvas5').style.display = 'none';
+
+            if(a=="circle")
+            {
+              document.body.background = "circle.png";
+
+    document.getElementById('radius').style.display = 'inline-block';
+    document.getElementById('height').style.display = 'none';
+    document.getElementById('base').style.display = 'none';
+    document.getElementById('length').style.display = 'none';
+    document.getElementById('breadth').style.display = 'none';
+    document.getElementById('side').style.display = 'none';
+
+    document.getElementById('submit').style.display = 'inline-block';
+    document.getElementById('submit').onclick = function fun(){
+    var r = document.getElementById('radius').value;
+    var area = 3.14*r*r;
+    var peri = 2*3.14*r
+      alert("area is = " + area + " perimeter = "+peri);
+  }
+            }
+            if(a=="triangle")
+            {
+
+
+                          document.body.background = "triangle.png";
+
+                          document.getElementById('height').style.display = 'inline-block';
+                          document.getElementById('base').style.display = 'inline-block';
+                          document.getElementById('side').style.display = 'inline-block';
+
+                              document.getElementById('radius').style.display = 'none';
+                              document.getElementById('length').style.display = 'none';
+                              document.getElementById('breadth').style.display = 'none';
+
+                          document.getElementById('submit').style.display = 'inline-block';
+
+                          document.getElementById('submit').onclick = function trian(){
+                          var h = parseInt(document.getElementById('height').value);
+                          var w = parseInt(document.getElementById('base').value);
+                          var s = parseInt(document.getElementById('side').value);
+                          var triar = h*w*0.5;
+                          var peri = (h+w+s);
+                          alert("area is = " + triar + " perimeter = "+peri);
+                          }
+
+
+            }
+            if(a=="rectangle")
+            {
+    document.body.background = "rectangle.png";
+
+    document.getElementById('length').style.display = 'inline-block';
+    document.getElementById('breadth').style.display = 'inline-block';
+    document.getElementById('submit').style.display = 'inline-block';
+
+
+        document.getElementById('radius').style.display = 'none';
+        document.getElementById('height').style.display = 'none';
+        document.getElementById('base').style.display = 'none';
+        document.getElementById('side').style.display = 'none';
+
+    document.getElementById('submit').onclick = function trian(){
+    var h = document.getElementById('length').value;
+    var w = document.getElementById('breadth').value;
+    var recarea = h*w;
+    var peri = h*2+w*2;
+    alert("area is = " + recarea + " perimeter = "+peri);
+    }
+            }
+
+            if(a=="square")
+            {
+                        document.body.background = "square.png";
+
+    document.getElementById('side').style.display = 'inline-block';
+
+        document.getElementById('radius').style.display = 'none';
+        document.getElementById('height').style.display = 'none';
+        document.getElementById('base').style.display = 'none';
+        document.getElementById('length').style.display = 'none';
+        document.getElementById('breadth').style.display = 'none';
+
+    document.getElementById('submit').style.display = 'inline-block';
+
+    document.getElementById('submit').onclick = function trian(){
+    var h = document.getElementById('side').value;
+    var recarea = h*h;
+    var peri = 4*h;
+      alert("area is = " + recarea + " perimeter = "+peri);
+    }
+            }
+
+            if(a=="hexagon")
+            {
+                        document.body.background = "hexagon.png";
+
+                    document.getElementById('5').style.display= "inline";
+
+                    document.getElementById('side').style.display = 'inline-block';
+
+                        document.getElementById('radius').style.display = 'none';
+                        document.getElementById('height').style.display = 'none';
+                        document.getElementById('base').style.display = 'none';
+                        document.getElementById('length').style.display = 'none';
+                        document.getElementById('breadth').style.display = 'none';
+
+                    document.getElementById('submit').style.display = 'inline-block';
+
+                    document.getElementById('submit').onclick = function trian(){
+                    var h = document.getElementById('side').value;
+                    var recarea = (3*h*h*1.73)/2;
+                    var peri = 6*h;
+                    alert("area is = " + recarea + " perimeter = "+peri);
+                    }
+            }
+          }
+          function draw() {
+       var canvas = document.getElementById('canvas1');
+       var canvas1 = document.getElementById('canvas2');
+       var canvas2 = document.getElementById('canvas3');
+       var canvas3 = document.getElementById('canvas4');
+       var canvas4 = document.getElementById('canvas5');
+
+       if (canvas.getContext) {
+           var ctx = canvas.getContext('2d');
+
+           var sWidth = canvas.width;
+           var sHeight = canvas.height;
+           var path=new Path2D();
+           ctx.beginPath();
+ ctx.arc(100,75,50,0,2*Math.PI);
+ ctx.stroke();
+
+           var ctx1 = canvas1.getContext('2d');
+
+           var sWidth = canvas1.width;
+           var sHeight = canvas1.height;
+           var path=new Path2D();
+           ctx1.rect(20,20,150,100);
+          ctx1.stroke();
+
+           var ctx2 = canvas2.getContext('2d');
+           var sWidth = canvas2.width;
+           var sHeight = canvas2.height;
+           var path=new Path2D();
+           path.moveTo((sWidth/2)+50,sHeight/2);
+           path.lineTo((sWidth/2),(sHeight/2)-50);
+           path.lineTo((sWidth/2)-50,sHeight/2);
+           ctx2.fill(path);
+
+           var ctx3 = canvas3.getContext('2d');
+
+           var sWidth = canvas3.width;
+           var sHeight = canvas3.height;
+           var path=new Path2D();
+           ctx3.rect(20,20,100,100);
+          ctx3.stroke();
+
+           var context = canvas4.getContext('2d');
+
+           var sWidth = canvas4.width;
+           var sHeight = canvas4.height;
+           var path=new Path2D();
+
+     // set up the variables
+         x0 = 10; // starting values
+         y0 = 10;
+
+         x  = x0; // operating vars
+         y0 = 10;
+
+         xx = 50; // size of the legs of the shape
+         yy = 25;
+
+
+     // perform the moves and line drawing
+         x =  x0;
+         y =  y0;
+         context.moveTo( x, y );
+
+         x += xx;
+         y +=  0;
+         context.moveTo( x, y );
+
+         x += xx;
+         y +=  0;
+         context.lineTo( x, y );
+
+         x += xx;
+         y += yy;
+         context.lineTo( x, y );
+
+         x += ( xx * -1 );
+         y+=yy;
+         context.lineTo( x, y );
+
+         x += ( xx * -1 );
+         y += 0;
+         context.lineTo( x, y );
+
+         x += ( xx * -1 );
+         y += ( yy * -1 );
+         context.lineTo( x, y );
+
+         x += xx;
+         y+=( yy * -1 );
+         context.lineTo( x, y );
+
+     // now render it per our style definitions
+         context.strokeStyle = "rgba(0,0,0,1)";
+         context.stroke();
+       }
+   }
+      </script>
+
+
+<!--  <img style="margin:20px"  id="1" src="circle.png" onclick="draw()" />
+  <img style="margin:20px" id="2" src="rectangle.png"  onclick="exportToForm('rectangle')"/>
+  <img style="margin:20px"  id="3" src="triangle.png"  onclick="exportToForm('triangle')"/>
+  <img style="margin:20px"  id="4" src="square.png"  onclick="exportToForm('square')"/>
+  <img style="margin-left:50%;" id="5" src="hexagon.png"  onclick="exportToForm('hexagon')"/> -->
+
+  <input type="button" id="circle" onclick="exportToForm('circle')"  value="Circle"/>
+  <input type="button" id="rectangle" onclick="exportToForm('rectangle')"   value="Rectangle"/>
+  <input type="button" id="triangle" onclick="exportToForm('triangle')"   value="Triangle"/>
+  <input type="button" id="square" onclick="exportToForm('square')"    value="Square"/>
+  <input type="button" id="hexagon" onclick="exportToForm('hexagon')"   value="Hexagon"/>
+
+  <input type="text" id="height" autofocus value = "Enter height" hidden="hidden"/>
+  <input type="text" id="base" autofocus value = "Enter base" hidden="hidden"/>
+  <input type="text" id="radius" autofocus value = "Enter radius" hidden="hidden"/>
+  <input type="text" id="side" autofocus value = "Enter side" hidden="hidden"/>
+  <input type="text" id="length" autofocus value = "Enter length" hidden="hidden"/>
+  <input type="text" id="breadth" autofocus value = "Enter breadth" hidden="hidden"/>
+  <input type="button" id="submit" autofocus value = "Submit" hidden="hidden"/>
+
+
+<canvas  id="canvas1" width="200px" height="200px" style="border:1px solid #d3d3d3"; onclick=exportToForm('circle')></canvas>
+  <canvas id="canvas2" width="200px" height="200px" style="border:1px solid #d3d3d3"; onclick=exportToForm('rectangle')></canvas>
+    <canvas id="canvas3" width="200px" height="200px" style="border:1px solid #d3d3d3"; onclick=exportToForm('triangle')></canvas>
+      <canvas id="canvas4" width="200px" height="200px" style="border:1px solid #d3d3d3"; onclick="exportToForm('square')"></canvas>
+      <canvas id="canvas5" width="200px" height="200px" style="border:1px solid #d3d3d3";  onclick="exportToForm('hexagon')"></canvas>
+
+
+
+</body>
+</html>

@@ -34,6 +34,51 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow,geocoder,pos,marker;
+      window.onload = function(){
+        var housinga = false;
+        var communitya = false;
+        var servicesa = false;
+
+
+        document.getElementById("housing").onclick = function(){
+        if(housinga==false)
+          {
+          document.getElementById('p1').style.height = "160px";
+          housinga = true;
+          }
+          else {
+            document.getElementById('p1').style.height = "0px";
+            housinga = false;
+                }
+              }
+
+          document.getElementById("community").onclick = function(){
+              if(communitya==false)
+                {
+                document.getElementById('comp1').style.height = "165px";
+                communitya = true;
+                }
+                else {
+                  document.getElementById('comp1').style.height = "0px";
+                  communitya = false;
+                      }
+                    }
+
+                document.getElementById("serv").onclick = function(){
+                        if(servicesa==false)
+                          {
+                          document.getElementById('services1').style.height = "165px";
+                          servicesa = true;
+                          }
+                          else {
+                            document.getElementById('services1').style.height = "0px";
+                            servicesa = false;
+                                }
+                              }
+
+
+
+            }
       function searc()
       {
       var pro =   prompt("Search Craigslist", "community");
@@ -181,20 +226,63 @@
 
     <div style="float:center"class="card1 card-1">
           <header>
-              <h2 style="color:white; background-color:#551A8B; height:25px;  text-align:center; padding:10px;">Header</h2>
+              <h2 id = "housing" style="color:white; background-color:#551A8B; height:25px;
+              text-align:center; padding:10px;">Housing</h2>
             </header>
-            <div>
-                <ul style="color:black;">
-                  <li>This is just some random content.</li>
-                  <li>This is just some random content.</li>
-                  <li>This is just some random content.</li>
-                  <li>This is just some random content.</li>
-                </ul>
-              </div>
+                <div>
+                    <ul id ="p1" style="color:black">
+                      <li><a href="">apts / housing</a></li>
+                      <li><a href="">housing swap</a></li>
+                      <li><a href="">housing wanted</a></li>
+                      <li><a href="">office / commercial</a></li>
+                      <li><a href="">vacation rentals</a></li>
+                      <li><a href="">parking / storage</a></li>
+                      <li><a href="">rooms wanted</a></li>
+                      <li><a href="">real estate for sale</a></li>
+                    </ul>
+                </div>
+
+
               <header>
-                  <h3 style="color:white; background-color:#551A8B; height:15px;  text-align:center; padding:10px;"> end</h3>
+                  <h2 id = "community" style="color:white; background-color:#551A8B; height:25px;
+                  text-align:center; padding:10px;">Community</h2>
                 </header>
-              </div>
+                <div>
+                      <ul id ="comp1" style="color:black">
+                        <li><a href="">local news</a></li>
+                        <li><a href="">lost+found</a></li>
+                        <li><a href="">musicians</a></li>
+                        <li><a href="">pets</a></li>
+                        <li><a href="">rideshare</a></li>
+                        <li><a href="">politics</a></li>
+                        <li><a href="">volunteers</a></li>
+                        <li><a href="">personals</a></li>
+                      </ul>
+                  </div>
+
+
+                  <header>
+                      <h2 id = "serv" style="color:white; background-color:#551A8B;
+                      height:25px; text-align:center; padding:10px;">Services</h2>
+                  </header>
+                    <div>
+                          <ul id ="services1" style="color:black">
+                            <li><a href="">automotive</a></li>
+                            <li><a href="">beauty</a></li>
+                            <li><a href="">cell/mobile</a></li>
+                            <li><a href="">computer</a></li>
+                            <li><a href="">creative</a></li>
+                            <li><a href="">cycle</a></li>
+                            <li><a href="">event</a></li>
+                            <li><a href="">financial</a></li>
+                          </ul>
+                      </div>
+
+                      <header>
+                          <h2 style="color:white; background-color:#551A8B;
+                          height:25px; text-align:center; padding:10px;"></h2>
+                        </header>
+            </div>
 
 
     <div style="float:right;"class="card card-1">

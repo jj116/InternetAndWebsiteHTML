@@ -28,12 +28,16 @@
   </head>
   <body>
     <div id="map"></div>
-    <script>
+    <script type="text/javascript">
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow,geocoder,pos,marker;
+      function searc()
+      {
+      var pro =   prompt("Search Craigslist", "community");
+      }
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
@@ -76,15 +80,13 @@
           position: pos,
           map: map
         })  ;
-        infoWindow.setContent(results[0].formatted_address);
+
         document.getElementById("heading").innerHTML = results[0].formatted_address;
       }
       } else {
       window.alert('Geocoder failed due to: ' + status);
       }
           });
-      infoWindow.setPosition(pos);
-      infoWindow.open(map);
       map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -107,16 +109,103 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEkFUeVEORgr7SnSMqOIFk5UYaO-dYTlA&callback=initMap">
     </script>
 
-    <h3 style="text-align:center; background-color =yellow" id ="heading"></h3>
+    <h2 style="text-align:center; color:black;" id ="heading">
+    </h3>
     <nav class="topnav" id="myTopnav">
-      <a href="/html/">Log In</a> |
-      <a href="/css/">Search</a> |
-      <a href="/js/">Post</a> |
+      <a href="/html/">Log In</a>
+      <a href="/css/" onclick="searc()">Search</a>
+      <a href="/js/">Post</a>
     </nav>
-    <div class="card card-1"></div>
-    <div class="card1 card-1"></div>
-    <div class="card card-1"></div>
 
+
+    <div style="float:left"class="card card-1">
+      <header>
+          <h2 style="color:white; background-color:#2196F3; height:25px;  text-align:center; padding:10px;">Calendar</h2>
+        </header>
+
+        <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+          </ul>
+
+          <ul class="days">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li><span class="active">4</span></li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+            </ul>
+              <header>
+          <h3 style="color:white; background-color:#2196F3; height:15px;  text-align:center; padding:10px;">Details</h3>
+              </header>
+
+                <p style="color:black">
+                      <ul>  <a href="">legal</a> <a href="">avoid</a> <a href="">scams</a> <a href="">personal</a> </ul>
+                      <ul> <a href="">safety</a> <a href="">tips</a> <a href="">terms of use</a> <a href="">privacy policy</a></ul>
+                      <ul> <a href="">system status</a> <a href="">about craigslist</a> <a href="">craigslist open source</a> </ul>
+                      <ul> <a href="">craigslist blog</a> <a href="">  best-of-craigslist</a></ul>
+                      <ul><a href="">craigslist TV</a> <a href="">craig connects</a></ul>
+                    </p>
+                  </div>
+
+    <div style="float:center"class="card1 card-1">
+          <header>
+              <h2 style="color:white; background-color:#2196F3; height:25px;  text-align:center; padding:10px;">Header</h2>
+            </header>
+            <div>
+                <ul style="color:black;">
+                  <li>This is just some random content.</li>
+                  <li>This is just some random content.</li>
+                  <li>This is just some random content.</li>
+                  <li>This is just some random content.</li>
+                </ul>
+              </div>
+              <header>
+                  <h3 style="color:white; background-color:#2196F3; height:15px;  text-align:center; padding:10px;"> end</h3>
+                </header>
+              </div>
+
+
+    <div style="float:right;"class="card card-1">
+        <header>
+              <h2 style="color:white; background-color:#2196F3; height:25px;  text-align:center; padding:10px;">Header</h2>
+        </header>
+
+        <header>
+            <h3 style="color:white; background-color:#2196F3; height:15px;  text-align:center; padding:10px;"> end</h3>
+        </header>
+      </div>
 
   </body>
 </html>

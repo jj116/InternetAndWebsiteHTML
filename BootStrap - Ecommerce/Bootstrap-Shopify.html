@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Online Shopping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+    <script type="text/javascript">
+
+    function randomColor() {
+     return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
+    }
+
+    function setColor(){
+    document.getElementById('myDiv').style.backgroundColor = randomColor();
+    setTimeout(setColor, 2000);
+    }
+    setColor();
+</script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
 
     <div class="container">
-  <div class="jumbotron">
+  <div onload="setColor();" id="myDiv" class="jumbotron" >
     <h1>Shopify</h1>
-      <p>Begin shopping here</p>
+      <p> Begin shopping here</p>
   </div>
-</div>
+  </div>
+
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
       <div class="navbar-header">
@@ -42,7 +57,17 @@
   <div class="container">
   <h1> Shop here for the best experience</h1>
   <p>Shopify is here</p>
-</div>
+  </div>
+  <div class="row" style="text-align:center;margin-left:20%">
+    <div style="background:red;height:100px;"class="col-sm-3">.col-sm-4</div>
+    <div class="col-sm-3">.col-sm-4</div>
+    <div class="col-sm-3">.col-sm-4</div>
+  </div>
+  <div class="row" style="text-align:center;margin-left:20%">
+    <div style="background-color:red;height:100px;"class="col-sm-3">.col-sm-4</div>
+    <div class="col-sm-3">.col-sm-4</div>
+    <div class="col-sm-3">.col-sm-4</div>
+  </div>
 
   </body>
 

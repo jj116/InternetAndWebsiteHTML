@@ -2,6 +2,21 @@
     background-color: red;
     transition: background-color 2s;
 }
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.carousel .item{
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-example{
+	margin: 20px;
+}
+
 
 #rig {
 
@@ -112,11 +127,18 @@
     }
 }
 
+@font-face {
+
+  font-family: "helv"
+  src:url("C:/Users/admin/Desktop/Studies/HTML/blog/Aliquam.ttf");
+
+}
+
 
 .h1
 { font-size: 45px;
 text-align: center;
-font-family:'helvetica';
+font-family:'helv';
 }
 
 .h3

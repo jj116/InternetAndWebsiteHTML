@@ -2,19 +2,38 @@
 <html>
 
   <head>
-
+    <title>Online Shopping</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Online Shopping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap1.css"/>
+
+
     <script type="text/javascript">
 
 
 
+    $(function () {
+    $('[data-toggle="popover"]').popover({
+      trigger : 'click',
+  placement : 'top',
+  html: 'true',
+  content : '<textarea class="popover-textarea"></textarea>',
+  template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
+            '<h3 style="text-align:center;"class="popover-title"></h3><div class="popover-content">'+
+            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
+            '</div>'
+})
+    })
+
+    $('.popover-dismiss').popover({
+  trigger: 'focus'
+    })
     function randomColor() {
      return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
     }
+
+
 
     function setColor(){
     document.getElementById('myDiv').style.backgroundColor = randomColor();
@@ -118,70 +137,90 @@ function anim() {
   </head>
 
 
-  <body>
-
+  <body >
 
   <ul id="rig" >
+
   <li>
-      <a  href="shoes.html" class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/31EKIl-T2rL.jpg">
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title=" <strike>Rs. 2099</strike>(30% OFF)
+Rs. 1469"
+      data-placement="right" data-content="GST tax:15%"
+      class="rig-cell" >
+          <img class="rig-img" src="https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1701800/2017/6/7/11496828277657-Roadster-Men-Casual-Shoes-6741496828277730-1_mini.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Shoes</span>
+          <span class="rig-text">Roadster Men Grey Sneakers</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="shirts.html">
-          <img class="rig-img" src="http://creativeindiaexports.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/e/mens_long_sleeve_slim_fit_denim_shirts_.jpg">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="<strike>Rs. 2299</strike>(50% OFF)
+Rs. 1149"
+    data-placement="right" data-content="GST tax:15%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1831737/2017/8/7/11502104425004-Roadster-Men-Casual-Shoes-5401502104424772-1.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Shirts</span>
+          <span class="rig-text">Roadster Men Navy Perforated Slip-On Sneakers</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="electronics.html">
-          <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUw1KkupjIcsWlNTx35M5LUIjEMy8OyjEoUnSNgUTOa3nMOaDQ">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1,799"
+    data-placement="right" data-content="GST tax:12%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://www.ajio.com/medias/sys_master/root/h40/h61/10415262924830/-473Wx593H-460118571-navyblue-MODEL.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Electronics</span>
+          <span class="rig-text">LEVIS
+Casual Shoes with Lace-Ups</span>
         </a>
   </li>
   <li>
-      <a class="rig-cell" href="blog.html#lit">
-          <img class="rig-img" src="https://c.s-microsoft.com/en-us/CMSImages/disney-hero.jpg?version=f562f5a9-5d20-07eb-c55b-fe22f0648845">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 2309"
+    data-placement="right" data-content="GST tax:10%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1782647/2017/3/8/11488962194996-FILA-Men-Casual-Shoes-4261488962194840-1.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Movies</span>
+          <span class="rig-text">FILA Men Navy Blue Textured Baxter Regular Sneakers</span>
         </a>
   </li>
 </ul>
 <ul id="rig">
 <li>
-    <a class="rig-cell" href="blog.html#food">
-        <img class="rig-img" src="http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1922"
+  data-placement="right" data-content="GST tax:Applicable"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1719456/2017/7/18/11500377512648-Nike-Men-Charcoal-Grey-Voleio-Canvas-Sneakers-4871500377512331-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Books</span>
+        <span class="rig-text">Nike Men Charcoal Grey Voleio Canvas Sneakers</span>
     </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#travel">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHg5yO5EE_u1ERZqMqjUuwRu40qXU-3hMcicWVkcDxybcnrLmx">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 2577(40% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1962936/2017/8/23/11503478215536-Nike-Men-Navy-Blue-Sneakers-4441503478215312-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Sports</span>
+        <span class="rig-text">Nike Men Navy Blue COURT BOROUGH LOW Sneakers</span>
     </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#lit">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplcoY6jUEDTrFd18RESMYNw1a0i8R_2NfCXiHsQT2PUOmYYp">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 8999(30% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1990033/2017/8/25/11503643513456-Adidas-Originals-Men-Blue-STAN-SMITH-Leather-Sneakers-8731503643513228-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Car Accesories</span>
+        <span class="rig-text">Adidas Originals Men Blue STAN SMITH Leather Sneakers</span>
       </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#lit">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_6CrSM04tH7jIzrnxj9YxIWXMHe8cJncgsH2OttGQqkg0A0GM">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1319(30% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2028479/2017/8/30/11504086639163-Mast--Harbour-Men-Brown-Loafers-2271504086638987-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">TV</span>
+        <span class="rig-text">Mast & Harbour Men Brown Loafers</span>
       </a>
 </li>
-</ul>
 
+
+</ul>
   </body>
 
 </html>

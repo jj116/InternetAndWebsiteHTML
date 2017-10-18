@@ -2,19 +2,38 @@
 <html>
 
   <head>
-
+    <title>Online Shopping</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Online Shopping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap1.css"/>
+
+
     <script type="text/javascript">
 
 
 
+    $(function () {
+    $('[data-toggle="popover"]').popover({
+      trigger : 'click',
+  placement : 'top',
+  html: 'true',
+  content : '<textarea class="popover-textarea"></textarea>',
+  template: '<div class="popover"><div class="arrow"></div>'+
+            '<h3 class="popover-title"></h3><div class="popover-content">'+
+            '</div><div class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
+            '</div>'
+})
+    })
+
+    $('.popover-dismiss').popover({
+  trigger: 'focus'
+    })
     function randomColor() {
      return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
     }
+
+
 
     function setColor(){
     document.getElementById('myDiv').style.backgroundColor = randomColor();
@@ -118,70 +137,87 @@ function anim() {
   </head>
 
 
-  <body>
+  <body >
 
-  
   <ul id="rig" >
+
   <li>
-      <a  href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/31EKIl-T2rL.jpg">
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2496"
+      data-placement="right" data-content="GST tax:15%"
+      class="rig-cell" >
+          <img class="rig-img" src="https://rukminim1.flixcart.com/image/832/832/j7gi6q80/shirt/g/h/e/l-traks20-traks-original-imaexp9mw5zs2fke.jpeg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Shoes</span>
+          <span class="rig-text">TRAKS Men's Checkered Party Black Shirt</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="shirts.html">
-          <img class="rig-img" src="http://creativeindiaexports.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/e/mens_long_sleeve_slim_fit_denim_shirts_.jpg">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.1496"
+    data-placement="right" data-content="GST tax:15%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://rukminim1.flixcart.com/image/832/832/shirt/g/8/s/fmsh6881black-flying-machine-m-original-imaehezvbxfjfc6r.jpeg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Shirts</span>
+          <span class="rig-text">Flying Machine Men's Casual Grey Shirt</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="blog.html#lit">
-          <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJUw1KkupjIcsWlNTx35M5LUIjEMy8OyjEoUnSNgUTOa3nMOaDQ">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2666"
+    data-placement="right" data-content="GST tax:15%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://rukminim1.flixcart.com/image/832/832/shirt/g/a/e/tsf400255-the-vanca-xl-original-imaegnrzsajuqdu2.jpeg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Electronics</span>
+          <span class="rig-text">The Vanca Women's Solid Casual Black Shirt</span>
         </a>
   </li>
   <li>
-      <a class="rig-cell" href="blog.html#lit">
-          <img class="rig-img" src="https://c.s-microsoft.com/en-us/CMSImages/disney-hero.jpg?version=f562f5a9-5d20-07eb-c55b-fe22f0648845">
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2676"
+    data-placement="right" data-content="GST tax:15%"
+    class="rig-cell" >
+          <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1899625/2017/6/2/11496381818196-GUESS-Men-Blue-Super-Slim-Fit-Solid-Casual-Shirt-3301496381817977-1.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Movies</span>
+          <span class="rig-text">GUESS Men Blue Super Slim Fit Casual Shirt</span>
         </a>
   </li>
 </ul>
 <ul id="rig">
 <li>
-    <a class="rig-cell" href="blog.html#food">
-        <img class="rig-img" src="http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2466"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2038078/2017/9/8/11504866775162-Roadster-Men-Olive-Green-Regular-Fit-Solid-Casual-Shirt-221504866774969-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Books</span>
+        <span class="rig-text">Roadster Men Olive Green Solid Casual Shirt</span>
     </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#travel">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHg5yO5EE_u1ERZqMqjUuwRu40qXU-3hMcicWVkcDxybcnrLmx">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1499(40% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1790362/2017/7/26/11501069897704-Roadster-Men-Black-Regular-Fit-Solid-Casual-Shirt-2601501069897458-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Sports</span>
+        <span class="rig-text">Roadster Men Black Regular Fit Denim Casual Shirt</span>
     </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#lit">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplcoY6jUEDTrFd18RESMYNw1a0i8R_2NfCXiHsQT2PUOmYYp">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1099(30% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2032111/2017/9/4/11504502866103-Roadster-Women-Blue--Off-White-Regular-Fit-Checked-Casual-Shirt-4241504502865943-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Car Accesories</span>
+        <span class="rig-text">Roadster Women Blue & Off-White Regular Fit Checked Casual Shirt</span>
       </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#lit">
-        <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_6CrSM04tH7jIzrnxj9YxIWXMHe8cJncgsH2OttGQqkg0A0GM">
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1299(30% OFF)"
+  data-placement="right" data-content="GST tax:15%"
+  class="rig-cell" >
+        <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2032110/2017/9/4/11504501983372-Roadster-Women-Pink--Blue-Regular-Fit-Checked-Casual-Shirt-531504501983186-1.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">TV</span>
+        <span class="rig-text">Roadster Women Pink & Blue Regular Fit Checked Casual Shirt</span>
       </a>
 </li>
-</ul>
 
+
+</ul>
   </body>
 
 </html>

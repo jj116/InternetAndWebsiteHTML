@@ -8,47 +8,8 @@
     <title>Online Shopping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
-    <script type="text/javascript">
 
 
-
-    function randomColor() {
-     return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
-    }
-
-    function setColor(){
-    document.getElementById('myDiv').style.backgroundColor = randomColor();
-    setTimeout(setColor, 2000);
-    }
-    anim();
-
-function anim() {
-    $("body").animate({
-        backgroundColor: "darkblue"
-    }, {
-        duration: 5000,
-        complete: function () {
-            $("body").animate({
-                backgroundColor: "darkgreen"
-            }, {
-                duration: 5000,
-                complete: function () {
-                    $("body").animate({
-                        backgroundColor: "darkred"
-                    }, {
-                        duration: 5000,
-                        complete: function () {
-                            anim();
-                        }
-                    });
-                }
-            });
-
-        }
-    });
-}
-
-</script>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -105,12 +66,12 @@ function anim() {
           <li><a href="shirts.html">Shirts</a></li>
           <li><a href="shoes.html">Shoes</a></li>
           <li><a href="electronics.html">Electronics</a></li>
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">Books</a></li>
-          <li><a href="#">Sports</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="sports.html">Sports</a></li>
         </ul>
       </li>
-      <li><a href="#">Cart</a></li>
+      <li><a href="cart.html">Cart</a></li>
       <li><a href="#">About</a></li>
       </ul>
     </div>
@@ -144,7 +105,7 @@ function anim() {
         </a>
   </li>
   <li>
-      <a class="rig-cell" href="blog.html#lit">
+      <a class="rig-cell" href="movies.html">
           <img class="rig-img" src="https://c.s-microsoft.com/en-us/CMSImages/disney-hero.jpg?version=f562f5a9-5d20-07eb-c55b-fe22f0648845">
           <span class="rig-overlay"></span>
           <span class="rig-text">Movies</span>
@@ -153,14 +114,14 @@ function anim() {
 </ul>
 <ul id="rig">
 <li>
-    <a class="rig-cell" href="blog.html#food">
+    <a class="rig-cell" href="books.html">
         <img class="rig-img" src="http://whytoread.com/wp-content/uploads/2015/03/best-books-book-youll-ever-read.jpg">
         <span class="rig-overlay"></span>
         <span class="rig-text">Books</span>
     </a>
 </li>
 <li>
-    <a class="rig-cell" href="blog.html#travel">
+    <a class="rig-cell" href="sports.html">
         <img class="rig-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHg5yO5EE_u1ERZqMqjUuwRu40qXU-3hMcicWVkcDxybcnrLmx">
         <span class="rig-overlay"></span>
         <span class="rig-text">Sports</span>

@@ -12,23 +12,59 @@
     <script type="text/javascript">
 
 
-
     $(function () {
     $('[data-toggle="popover"]').popover({
       trigger : 'click',
-  placement : 'top',
-  html: 'true',
-  content : '<textarea class="popover-textarea"></textarea>',
-  template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
+    placement : 'top',
+    html: 'true',
+    content : '<textarea class="popover-textarea"></textarea>',
+    template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
             '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
             '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
             '</div>'
-})
+    })
     })
 
     $('.popover-dismiss').popover({
   trigger: 'focus'
     })
+    function randomColor() {
+     return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
+    }
+
+
+
+    function setColor(){
+    document.getElementById('myDiv').style.backgroundColor = randomColor();
+    setTimeout(setColor, 2000);
+    }
+    anim();
+
+function anim() {
+    $("body").animate({
+        backgroundColor: "darkblue"
+    }, {
+        duration: 5000,
+        complete: function () {
+            $("body").animate({
+                backgroundColor: "darkgreen"
+            }, {
+                duration: 5000,
+                complete: function () {
+                    $("body").animate({
+                        backgroundColor: "darkred"
+                    }, {
+                        duration: 5000,
+                        complete: function () {
+                            anim();
+                        }
+                    });
+                }
+            });
+
+        }
+    });
+}
 
 </script>
 
@@ -105,78 +141,77 @@
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="17,469"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.12,999.00"
       data-placement="right" data-content="GST tax:15%"
       class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61T4Ibo8b%2BL._SL1200_.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51TxFWU9OFL.jpg">
           <span class="rig-overlay"></span>
-          <span id="product" class="rig-text">HP 15q-BU008TU 2017 15.6-inch Laptop (Pentium N3710/4GB/500GB/Fast Charge Battery/Windows 10/Integrated Graphics)</span>
+          <span class="rig-text">Kipsta B300 Adult Basketball Backboard - Black/Orange</span>
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="<strike>Rs. 47,980.00  </strike>(50% OFF)
-Rs. 23,456"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2,490.00 "
     data-placement="right" data-content="GST tax:15%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61gNcWEe6pL._SL1390_.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61thN2fCJiL._SL1100_.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">HP 15-BE009TU 15.6-inch Laptop </span>
+          <span class="rig-text">Wildcraft 60 Ltrs Green Rucksack (AM RK 2)</span>
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.  52,980.00 "
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 232.00  "
     data-placement="right" data-content="GST tax:12%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/41QZK0L3inL.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/31gstW5msgL.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">HP 15-AU003TX 15.6-inch Laptop</span>
+          <span class="rig-text">AVM CRB-012 Cricket Bat, Size 3</span>
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.24,900.00 "
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 19,156.000 "
     data-placement="right" data-content="GST tax:10%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61Zd4fRch4L._SL1200_.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51BtpPnj2%2BL._SL1001_.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Apple iPad Tablet</span>
+          <span class="rig-text">Force 105 Tennis Racquet, 4_1/4/</span>
         </a>
   </li>
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 4,799.00 "
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.  6,135.68 "
   data-placement="right" data-content="GST tax:Applicable"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/417GpgO5ssL.jpg">
+        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/816hupYRG9L._UL1500_.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Lenovo Tab 3 Essential Tablet</span>
+        <span class="rig-text">Under Armour Men's Rocket 2 Basketball Shoe</span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 12,340.00 (40% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.780.00 "
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/71qRelpQ%2BxL._SL1000_.jpg">
+        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61f8cdSIcpL.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Samsung LC24F390FHWXXL 23.6-inch Curved LED Monitor</span>
+        <span class="rig-text">Nivia Top Grip Basketball</span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.3,299.00(30% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.480.00 "
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/6106bDIN3VL._SL1500_.jpg">
+        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61SondsXAML._SL1100_.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Netgear R6120-100INS AC1200 Dual-Band Wi-Fi Router</span>
+        <span class="rig-text">Gowin By Triumph ACE Black/Parrot Football Shoes</span>
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 499.00 (30% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 515.00 "
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/411jXtQp3jL.jpg">
+        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/91RJ7mA38zL._SL1500_.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Lenovo N100 Wireless Mouse (Black)</span>
+        <span class="rig-text">Nivia Street Rubber Football, Size 5 (Black)</span>
       </a>
 </li>
 

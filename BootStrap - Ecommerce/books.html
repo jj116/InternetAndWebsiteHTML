@@ -11,6 +11,17 @@
 
     <script type="text/javascript">
 
+        function add_tocart()
+        {
+          var names = [];
+          var price = [];
+          names[0] = document.getElementById("product").innerHTML;
+          price[0] = document.getElementById("poptitle").innerHTML;
+          localStorage.setItem("item", JSON.stringify(names));
+          localStorage.setItem("quantity",1);
+          localStorage.setItem("unitprice", JSON.stringify(price));
+          localStorage.setItem("totprice", JSON.stringify(price));
+        }
 
 
     $(function () {
@@ -21,7 +32,7 @@
   content : '<textarea class="popover-textarea"></textarea>',
   template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
             '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
-            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
+            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit" onClick="add_tocart()">Add to cart</button>'+
             '</div>'
 })
     })
@@ -105,78 +116,77 @@
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="17,469"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 314.00"
       data-placement="right" data-content="GST tax:15%"
       class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61T4Ibo8b%2BL._SL1200_.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/513yStEBREL._SX327_BO1,204,203,200_.jpg">
           <span class="rig-overlay"></span>
-          <span id="product" class="rig-text">HP 15q-BU008TU 2017 15.6-inch Laptop (Pentium N3710/4GB/500GB/Fast Charge Battery/Windows 10/Integrated Graphics)</span>
+          <span id="product" class="rig-text">Into the Water </span>
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="<strike>Rs. 47,980.00  </strike>(50% OFF)
-Rs. 23,456"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.1,425.00"
     data-placement="right" data-content="GST tax:15%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61gNcWEe6pL._SL1390_.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51MuLdQu3mL._SX337_BO1,204,203,200_.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">HP 15-BE009TU 15.6-inch Laptop </span>
+          <span id="product" class="rig-text">Miss Burma</span>
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.  52,980.00 "
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.202.00"
     data-placement="right" data-content="GST tax:12%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/41QZK0L3inL.jpg">
+          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51tqZTWKaCL._SX321_BO1,204,203,200_.jpg  ">
           <span class="rig-overlay"></span>
-          <span class="rig-text">HP 15-AU003TX 15.6-inch Laptop</span>
+          <span  id="product"class="rig-text">What Kitty Did</span>
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.24,900.00 "
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 456.00 "
     data-placement="right" data-content="GST tax:10%"
     class="rig-cell" >
-          <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61Zd4fRch4L._SL1200_.jpg">
+          <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/41bT5tIkgzL._SY346_.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Apple iPad Tablet</span>
+          <span  id="product"class="rig-text">Moby Dick</span>
         </a>
   </li>
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 4,799.00 "
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.126.00"
   data-placement="right" data-content="GST tax:Applicable"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/417GpgO5ssL.jpg">
+        <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/41j4I8Zq7kL.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Lenovo Tab 3 Essential Tablet</span>
+        <span  id="product"class="rig-text">The Time Machine</span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 12,340.00 (40% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.350.00"
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/71qRelpQ%2BxL._SL1000_.jpg">
+        <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/51tQFV0GhTL.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Samsung LC24F390FHWXXL 23.6-inch Curved LED Monitor</span>
+        <span  id="product"class="rig-text">Angels And Demons: (Robert Langdon Book 1) </span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.3,299.00(30% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 499.00"
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/6106bDIN3VL._SL1500_.jpg">
+        <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/51szYPO-G7L.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Netgear R6120-100INS AC1200 Dual-Band Wi-Fi Router</span>
+        <span  id="product"class="rig-text">Harry Potter and the Philosopher's Stone</span>
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 499.00 (30% OFF)"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.130.00"
   data-placement="right" data-content="GST tax:15%"
   class="rig-cell" >
-        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/411jXtQp3jL.jpg">
+        <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/71cmOMdlxEL.jpg">
         <span class="rig-overlay"></span>
-        <span class="rig-text">Lenovo N100 Wireless Mouse (Black)</span>
+        <span  id="product"class="rig-text">The Secret Of The Nagas (Shiva Trilogy-2)</span>
       </a>
 </li>
 

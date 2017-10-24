@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Online Shopping</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+
+
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+
+  <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+          <div class="item active">
+              <img src="shopo.png" alt="First Slide">
+              <div class="carousel-caption">
+
+              </div>
+          </div>
+          <div class="item">
+              <img src="http://www.diwalioffers.co/wp-content/uploads/2016/09/cropped-Diwali_Offers-1-1.png" alt="Second Slide">
+              <div class="carousel-caption">
+                  <h3>Diwali Discounts</h3>
+              </div>
+          </div>
+          <div class="item">
+                <img src="http://misfitinteractive.com/wp-content/uploads/2015/04/discount.png" alt="Third Slide">
+              <div class="carousel-caption">
+                  <h3>Shop here for the best offers</h3>
+              </div>
+          </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+  </div>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand" style="color:	#4484CE"href="#">Shopo</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li class="active"><a href="Bootstrap-Shopify.html">Home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="shirts.html">Shirts</a></li>
+        <li><a href="shoes.html">Shoes</a></li>
+        <li><a href="electronics.html">Electronics</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="sports.html">Sports</a></li>
+      </ul>
+    </li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
+</head>
+
+<body>
+      <script>
+      function myCreateFunction() {
+    var table = document.getElementById("table");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var storedNames = JSON.parse(localStorage.getItem("item"));
+    var price = JSON.parse(localStorage.getItem("unitprice"));
+    var quantity = JSON.parse(localStorage.getItem("quantity"));
+    var totprice = JSON.parse(localStorage.getItem("totprice"));
+    cell1.innerHTML = storedNames;
+    cell2.innerHTML = quantity;
+    cell3.innerHTML = price;
+    cell4.innerHTML = totprice;
+}
+
+
+      </script>
+
+  <div class="container">
+<button onclick="myCreateFunction()">Try it</button>
+  	<h1>Shopping Cart</h1><hr>
+  	<table id="table" class="table table-striped table-hover table-bordered">
+          <tbody>
+              <tr>
+                  <th>Item</th>
+                  <th>QTY</th>
+                  <th>Unit Price</th>
+                  <th>Total Price</th>
+              </tr>
+              <tr>
+                  <th colspan="3"><span class="pull-right">Sub Total</span></th>
+                  <th>subtotal</th>
+              </tr>
+              <tr>
+                  <th colspan="3"><span class="pull-right">Total</span></th>
+                  <th>total</th>
+              </tr>
+              <tr>
+                  <td><a href="Bootstrap-Shopify.html" class="btn btn-primary">Continue Shopping</a></td>
+                  <td colspan="3"><a href="#" class="pull-right btn btn-success">Checkout</a></td>
+              </tr>
+          </tbody>
+      </table>
+
+  </div>
+</body>
+</html>

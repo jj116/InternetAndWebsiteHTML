@@ -10,17 +10,32 @@
 
 
     <script type="text/javascript">
+    var names = [];
+    var price = [];
+    var quantity = [];
+    var count =0;
 
         function add_tocart()
         {
-          var names = [];
-          var price = [];
-          names[0] = document.getElementById("product").innerHTML;
-          price[0] = document.getElementById("poptitle").innerHTML;
-          localStorage.setItem("item", JSON.stringify(names));
-          localStorage.setItem("quantity",1);
-          localStorage.setItem("unitprice", JSON.stringify(price));
-          localStorage.setItem("totprice", JSON.stringify(price));
+
+          names[count] = document.getElementById("poptitle").innerHTML;
+          price[count] = document.getElementById("popcontent").innerHTML;
+          quantity[count] = "1";
+          alert(names);
+          count = count+1;
+          var storednames = JSON.parse(localStorage.getItem("item"));
+          var storedquant = JSON.parse(localStorage.getItem("quantity"));
+          var storedprice = JSON.parse(localStorage.getItem("unitprice"));
+          var storedtotprice = JSON.parse(localStorage.getItem("totprice"));
+          storednames.push(names);
+          alert(storednames);
+          storedquant.push(quantity);
+          storedprice.push(price);
+          storedtotprice.push(price);
+          localStorage.setItem("item", JSON.stringify(storednames));
+          localStorage.setItem("quantity",JSON.stringify(quantity));
+          localStorage.setItem("unitprice", JSON.stringify(storedprice));
+          localStorage.setItem("totprice", JSON.stringify(storedprice));
         }
 
 
@@ -116,8 +131,8 @@
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 314.00"
-      data-placement="right" data-content="GST tax:15%"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Into the Water"
+      data-placement="right" data-content=" Rs. 314.00"
       class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/513yStEBREL._SX327_BO1,204,203,200_.jpg">
           <span class="rig-overlay"></span>
@@ -125,8 +140,8 @@
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.1,425.00"
-    data-placement="right" data-content="GST tax:15%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Miss Burma"
+    data-placement="right" data-content="Rs.1,425.00"
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51MuLdQu3mL._SX337_BO1,204,203,200_.jpg">
           <span class="rig-overlay"></span>
@@ -134,8 +149,8 @@
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.202.00"
-    data-placement="right" data-content="GST tax:12%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="What Kitty Did"
+    data-placement="right" data-content="Rs.202.00"
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51tqZTWKaCL._SX321_BO1,204,203,200_.jpg  ">
           <span class="rig-overlay"></span>
@@ -143,8 +158,8 @@
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 456.00 "
-    data-placement="right" data-content="GST tax:10%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Moby Dick"
+    data-placement="right" data-content="Rs. 456.00 "
     class="rig-cell" >
           <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/41bT5tIkgzL._SY346_.jpg">
           <span class="rig-overlay"></span>
@@ -154,8 +169,8 @@
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.126.00"
-  data-placement="right" data-content="GST tax:Applicable"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="The Time Machine"
+  data-placement="right" data-content="Rs.126"
   class="rig-cell" >
         <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/41j4I8Zq7kL.jpg">
         <span class="rig-overlay"></span>
@@ -163,8 +178,8 @@
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.350.00"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Angels And Demons: (Robert Langdon Book 1) "
+  data-placement="right" data-content="Rs.350.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/51tQFV0GhTL.jpg">
         <span class="rig-overlay"></span>
@@ -172,8 +187,8 @@
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 499.00"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Harry Potter and the Philosopher's Stone"
+  data-placement="right" data-content="Rs. 499.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-eu.ssl-images-amazon.com/images/I/51szYPO-G7L.jpg">
         <span class="rig-overlay"></span>
@@ -181,8 +196,8 @@
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.130.00"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="The Secret Of The Nagas (Shiva Trilogy-2)"
+  data-placement="right" data-content="Rs.130.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/71cmOMdlxEL.jpg">
         <span class="rig-overlay"></span>

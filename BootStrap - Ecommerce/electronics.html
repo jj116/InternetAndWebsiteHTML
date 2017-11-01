@@ -10,18 +10,48 @@
 
 
     <script type="text/javascript">
+    var names = [];
+    var price = [];
+    var storednames = [];
+    var storedquant = [];
+    var storedprice = [];
+    var storedtotprice = [];
+    var quantity=[];
+    var count =0;
 
+        function add_tocart()
+        {
+
+          names[count] = document.getElementById("poptitle").innerHTML;
+          price[count] = document.getElementById("popcontent").innerHTML;
+          quantity[count]="1";
+          alert(names);
+          count = count+1;
+          var storednames = JSON.parse(localStorage.getItem("item"));
+          var storedquant = JSON.parse(localStorage.getItem("quantity"));
+          var storedprice = JSON.parse(localStorage.getItem("unitprice"));
+          var storedtotprice = JSON.parse(localStorage.getItem("totprice"));
+          storednames.push(names);
+          alert(storednames);
+          storedquant.push(quantity);
+          storedprice.push(price);
+          storedtotprice.push(price);
+          localStorage.setItem("item", JSON.stringify(storednames));
+          localStorage.setItem("quantity",JSON.stringify(quantity));
+          localStorage.setItem("unitprice", JSON.stringify(storedprice));
+          localStorage.setItem("totprice", JSON.stringify(storedprice));
+        }
 
 
     $(function () {
     $('[data-toggle="popover"]').popover({
-      trigger : 'click',
+  trigger : 'click',
   placement : 'top',
   html: 'true',
   content : '<textarea class="popover-textarea"></textarea>',
   template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
             '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
-            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
+            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit" onClick="add_tocart()">Add to cart</button>'+
             '</div>'
 })
     })
@@ -105,8 +135,8 @@
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="17,469"
-      data-placement="right" data-content="GST tax:15%"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="HP 15q-BU008TU 2017 15.6-inch Laptop (Pentium N3710/4GB/500GB/Fast Charge Battery/Windows 10/Integrated Graphics)"
+      data-placement="right" data-content="Rs.17,469"
       class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61T4Ibo8b%2BL._SL1200_.jpg">
           <span class="rig-overlay"></span>
@@ -114,9 +144,8 @@
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="<strike>Rs. 47,980.00  </strike>(50% OFF)
-Rs. 23,456"
-    data-placement="right" data-content="GST tax:15%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="HP 15-BE009TU 15.6-inch Laptop"
+    data-placement="right" data-content=" Rs. 47,980.00"
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61gNcWEe6pL._SL1390_.jpg">
           <span class="rig-overlay"></span>
@@ -124,8 +153,8 @@ Rs. 23,456"
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.  52,980.00 "
-    data-placement="right" data-content="GST tax:12%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="HP 15-AU003TX 15.6-inch Laptop"
+    data-placement="right" data-content="Rs.  52,980.00 "
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/41QZK0L3inL.jpg">
           <span class="rig-overlay"></span>
@@ -133,8 +162,8 @@ Rs. 23,456"
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.24,900.00 "
-    data-placement="right" data-content="GST tax:10%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Apple iPad Tablet"
+    data-placement="right" data-content="Rs.24,900.00 "
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61Zd4fRch4L._SL1200_.jpg">
           <span class="rig-overlay"></span>
@@ -144,8 +173,8 @@ Rs. 23,456"
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 4,799.00 "
-  data-placement="right" data-content="GST tax:Applicable"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Lenovo Tab 3 Essential Tablet"
+  data-placement="right" data-content="Rs. 4,799.00 "
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/417GpgO5ssL.jpg">
         <span class="rig-overlay"></span>
@@ -153,8 +182,8 @@ Rs. 23,456"
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 12,340.00 (40% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Samsung LC24F390FHWXXL 23.6-inch Curved LED Monitor"
+  data-placement="right" data-content="Rs. 12,340.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/71qRelpQ%2BxL._SL1000_.jpg">
         <span class="rig-overlay"></span>
@@ -162,8 +191,8 @@ Rs. 23,456"
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.3,299.00(30% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Netgear R6120-100INS AC1200 Dual-Band Wi-Fi Router"
+  data-placement="right" data-content="Rs.3,299.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/6106bDIN3VL._SL1500_.jpg">
         <span class="rig-overlay"></span>
@@ -171,8 +200,8 @@ Rs. 23,456"
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 499.00 (30% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Lenovo N100 Wireless Mouse (Black)"
+  data-placement="right" data-content="Rs. 499.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/411jXtQp3jL.jpg">
         <span class="rig-overlay"></span>

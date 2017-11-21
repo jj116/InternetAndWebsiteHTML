@@ -9,65 +9,64 @@
     <link type="text/css" rel="stylesheet" href="bootstrap1.css"/>
 
 
-    <script type="text/javascript">
+        <script type="text/javascript">
 
+        var names = [];
+        var price = [];
+        var storednames = [];
+        var storedquant = [];
+        var storedprice = [];
+        var storedtotprice = [];
+        var quantity=[];
+        var count =0;
 
+            function add_tocart()
+            {
 
-    $(function () {
-    $('[data-toggle="popover"]').popover({
-      trigger : 'click',
-  placement : 'top',
-  html: 'true',
-  content : '<textarea class="popover-textarea"></textarea>',
-  template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
-            '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
-            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
-            '</div>'
-})
+              names[count] = document.getElementById("poptitle").innerHTML;
+              price[count] = document.getElementById("popcontent").innerHTML;
+              quantity[count]="1";
+              alert(names);
+              count = count+1;
+              var storednames = JSON.parse(localStorage.getItem("item"));
+              var storedquant = JSON.parse(localStorage.getItem("quantity"));
+              var storedprice = JSON.parse(localStorage.getItem("unitprice"));
+              var storedtotprice = JSON.parse(localStorage.getItem("totprice"));
+              if(!storednames || !storedquant || !storedprice || storedtotprice)
+              {
+                localStorage.setItem("item", JSON.stringify(names));
+                localStorage.setItem("quantity",JSON.stringify(storedquant));
+                localStorage.setItem("unitprice", JSON.stringify(price));
+                localStorage.setItem("totprice", JSON.stringify(price));
+              }
+              storednames.push(names);
+              alert(storednames);
+              storedquant.push(quantity);
+              storedprice.push(price);
+              storedtotprice.push(price);
+              localStorage.setItem("item", JSON.stringify(storednames));
+              localStorage.setItem("quantity",JSON.stringify(storedquant));
+              localStorage.setItem("unitprice", JSON.stringify(storedprice));
+              localStorage.setItem("totprice", JSON.stringify(storedprice));
+            }
+
+        $(function () {
+        $('[data-toggle="popover"]').popover({
+          trigger : 'click',
+      placement : 'top',
+      html: 'true',
+      content : '<textarea class="popover-textarea"></textarea>',
+      template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
+                '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
+                '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit"  onClick="add_tocart()">Add to cart</button>'+
+                '</div>'
     })
+        })
 
-    $('.popover-dismiss').popover({
-  trigger: 'focus'
-    })
-    function randomColor() {
-     return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
-    }
-
-
-
-    function setColor(){
-    document.getElementById('myDiv').style.backgroundColor = randomColor();
-    setTimeout(setColor, 2000);
-    }
-    anim();
-
-function anim() {
-    $("body").animate({
-        backgroundColor: "darkblue"
-    }, {
-        duration: 5000,
-        complete: function () {
-            $("body").animate({
-                backgroundColor: "darkgreen"
-            }, {
-                duration: 5000,
-                complete: function () {
-                    $("body").animate({
-                        backgroundColor: "darkred"
-                    }, {
-                        duration: 5000,
-                        complete: function () {
-                            anim();
-                        }
-                    });
-                }
-            });
-
-        }
-    });
-}
-
-</script>
+        $('.popover-dismiss').popover({
+      trigger: 'focus'
+        })
+    </script>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -116,8 +115,8 @@ function anim() {
       <a class="navbar-brand" style="color:	#4484CE"href="#">Shopo</a>
       </div>
       <ul class="nav navbar-nav">
-      <li class="active"><a href="Bootstrap-Shopify.html">Home</a></li>
-      <li class="dropdown">
+      <li ><a href="Bootstrap-Shopify.html">Home</a></li>
+      <li class="active" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -142,9 +141,8 @@ function anim() {
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title=" <strike>Rs. 2099</strike>(30% OFF)
-Rs. 1469"
-      data-placement="right" data-content="GST tax:15%"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Roadster Men Grey Sneakers"
+      data-placement="right" data-content="Rs. 2099"
       class="rig-cell" >
           <img class="rig-img" src="https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1701800/2017/6/7/11496828277657-Roadster-Men-Casual-Shoes-6741496828277730-1_mini.jpg">
           <span class="rig-overlay"></span>
@@ -152,9 +150,8 @@ Rs. 1469"
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="<strike>Rs. 2299</strike>(50% OFF)
-Rs. 1149"
-    data-placement="right" data-content="GST tax:15%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Roadster Men Navy Perforated Slip-On Sneakers"
+    data-placement="right" data-content="Rs. 1149"
     class="rig-cell" >
           <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1831737/2017/8/7/11502104425004-Roadster-Men-Casual-Shoes-5401502104424772-1.jpg">
           <span class="rig-overlay"></span>
@@ -162,18 +159,17 @@ Rs. 1149"
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1,799"
-    data-placement="right" data-content="GST tax:12%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="LEVIS Casual Shoes with Lace-Ups"
+    data-placement="right" data-content="Rs. 1,799"
     class="rig-cell" >
           <img class="rig-img" src="https://www.ajio.com/medias/sys_master/root/h40/h61/10415262924830/-473Wx593H-460118571-navyblue-MODEL.jpg">
           <span class="rig-overlay"></span>
-          <span class="rig-text">LEVIS
-Casual Shoes with Lace-Ups</span>
+          <span class="rig-text">LEVIS Casual Shoes with Lace-Ups</span>
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 2309"
-    data-placement="right" data-content="GST tax:10%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="FILA Men Navy Blue Textured Baxter Regular Sneakers"
+    data-placement="right" data-content="Rs. 2309"
     class="rig-cell" >
           <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1782647/2017/3/8/11488962194996-FILA-Men-Casual-Shoes-4261488962194840-1.jpg">
           <span class="rig-overlay"></span>
@@ -183,8 +179,8 @@ Casual Shoes with Lace-Ups</span>
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1922"
-  data-placement="right" data-content="GST tax:Applicable"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Nike Men Charcoal Grey Voleio Canvas Sneakers"
+  data-placement="right" data-content="Rs. 1922"
   class="rig-cell" >
         <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1719456/2017/7/18/11500377512648-Nike-Men-Charcoal-Grey-Voleio-Canvas-Sneakers-4871500377512331-1.jpg">
         <span class="rig-overlay"></span>
@@ -192,8 +188,8 @@ Casual Shoes with Lace-Ups</span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 2577(40% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Nike Men Navy Blue COURT BOROUGH LOW Sneakers"
+  data-placement="right" data-content="Rs. 2577"
   class="rig-cell" >
         <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1962936/2017/8/23/11503478215536-Nike-Men-Navy-Blue-Sneakers-4441503478215312-1.jpg">
         <span class="rig-overlay"></span>
@@ -201,8 +197,8 @@ Casual Shoes with Lace-Ups</span>
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 8999(30% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Adidas Originals Men Blue STAN SMITH Leather Sneakers<"
+  data-placement="right" data-content="Rs. 8999"
   class="rig-cell" >
         <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/1990033/2017/8/25/11503643513456-Adidas-Originals-Men-Blue-STAN-SMITH-Leather-Sneakers-8731503643513228-1.jpg">
         <span class="rig-overlay"></span>
@@ -210,8 +206,8 @@ Casual Shoes with Lace-Ups</span>
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 1319(30% OFF)"
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Mast & Harbour Men Brown Loafers"
+  data-placement="right" data-content="Rs. 1319"
   class="rig-cell" >
         <img class="rig-img" src="https://assets.myntassets.com/h_640,q_90,w_480/v1/assets/images/2028479/2017/8/30/11504086639163-Mast--Harbour-Men-Brown-Loafers-2271504086638987-1.jpg">
         <span class="rig-overlay"></span>
@@ -221,6 +217,58 @@ Casual Shoes with Lace-Ups</span>
 
 
 </ul>
+
+<footer class="footer-bs">
+    <div class="row">
+      <div class="col-md-3 footer-brand animated fadeInLeft">
+            <p>Shopfy - Your one stop, for all your needs</p>
+            <p>©All rights reserved</p>
+        </div>
+      <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+                <ul class="pages">
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Shoes</a></li>
+                </ul>
+            </div>
+          <div class="col-md-6">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+      <div class="col-md-2 footer-social animated fadeInDown">
+          <h4>Follow Us</h4>
+          <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">RSS</a></li>
+            </ul>
+        </div>
+      <div class="col-md-3 footer-ns animated fadeInRight">
+          <h4>Newsletter</h4>
+            <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            <p>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+             </p>
+        </div>
+    </div>
+</footer>
+<section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Jaison Jose</a></p></section>
+
   </body>
 
 </html>

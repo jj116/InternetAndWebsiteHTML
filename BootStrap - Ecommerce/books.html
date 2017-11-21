@@ -17,23 +17,29 @@
 
         function add_tocart()
         {
-
           names[count] = document.getElementById("poptitle").innerHTML;
           price[count] = document.getElementById("popcontent").innerHTML;
           quantity[count] = "1";
-          alert(names);
+          //alert(names);
           count = count+1;
           var storednames = JSON.parse(localStorage.getItem("item"));
           var storedquant = JSON.parse(localStorage.getItem("quantity"));
           var storedprice = JSON.parse(localStorage.getItem("unitprice"));
           var storedtotprice = JSON.parse(localStorage.getItem("totprice"));
+          if(!storednames || !storedquant || !storedprice || storedtotprice)
+          {
+            localStorage.setItem("item", JSON.stringify(names));
+            localStorage.setItem("quantity",JSON.stringify(quantity));
+            localStorage.setItem("unitprice", JSON.stringify(price));
+            localStorage.setItem("totprice", JSON.stringify(price));
+          }
           storednames.push(names);
           alert(storednames);
           storedquant.push(quantity);
           storedprice.push(price);
           storedtotprice.push(price);
           localStorage.setItem("item", JSON.stringify(storednames));
-          localStorage.setItem("quantity",JSON.stringify(quantity));
+          localStorage.setItem("quantity",JSON.stringify(storedquant));
           localStorage.setItem("unitprice", JSON.stringify(storedprice));
           localStorage.setItem("totprice", JSON.stringify(storedprice));
         }
@@ -105,8 +111,8 @@
       <a class="navbar-brand" style="color:	#4484CE"href="#">Shopo</a>
       </div>
       <ul class="nav navbar-nav">
-      <li class="active"><a href="Bootstrap-Shopify.html">Home</a></li>
-      <li class="dropdown">
+      <li ><a href="Bootstrap-Shopify.html">Home</a></li>
+      <li class="active"class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -207,6 +213,57 @@
 
 
 </ul>
+<footer class="footer-bs">
+    <div class="row">
+      <div class="col-md-3 footer-brand animated fadeInLeft">
+            <p>Shopfy - Your one stop, for all your needs</p>
+            <p>©All rights reserved</p>
+        </div>
+      <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+                <ul class="pages">
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Shoes</a></li>
+                </ul>
+            </div>
+          <div class="col-md-6">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+      <div class="col-md-2 footer-social animated fadeInDown">
+          <h4>Follow Us</h4>
+          <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">RSS</a></li>
+            </ul>
+        </div>
+      <div class="col-md-3 footer-ns animated fadeInRight">
+          <h4>Newsletter</h4>
+            <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            <p>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+             </p>
+        </div>
+    </div>
+</footer>
+<section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Jaison Jose</a></p></section>
+
   </body>
 
 </html>

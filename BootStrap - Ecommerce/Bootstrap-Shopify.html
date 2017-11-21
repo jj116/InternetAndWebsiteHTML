@@ -3,6 +3,7 @@
 
   <head>
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Online Shopping</title>
@@ -75,11 +76,35 @@
       <li><a href="#">About</a></li>
       </ul>
     </div>
-  </nav>
+    </nav>
+
   </head>
 
 
   <body>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBUUQcFYU_WXYDVNRbhUKlUHTMnafpa5II",
+    authDomain: "newagent-3880a.firebaseapp.com",
+    databaseURL: "https://newagent-3880a.firebaseio.com",
+    projectId: "newagent-3880a",
+    storageBucket: "newagent-3880a.appspot.com",
+    messagingSenderId: "491397829403"
+  };
+  firebase.initializeApp(config);
+
+  var bigOne = document.getElementById('bigOne');
+  var dbref = firebase.database().ref().child('text');
+  dbref.on('value', snap => bigOne.innerText = snap.val() );
+
+
+</script>
+
+
+    <h1 id = "bigOne"></h1>
 
 
   <ul id="rig" >
@@ -142,6 +167,57 @@
       </a>
 </li>
 </ul>
+
+  <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-3 footer-brand animated fadeInLeft">
+              <p>Shopfy - Your one stop, for all your needs</p>
+              <p>©All rights reserved</p>
+          </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+            <h4>Menu —</h4>
+            <div class="col-md-6">
+                  <ul class="pages">
+                      <li><a href="#">Shirts</a></li>
+                      <li><a href="#">Sports</a></li>
+                      <li><a href="#">Electronics</a></li>
+                      <li><a href="#">Books</a></li>
+                      <li><a href="#">Shoes</a></li>
+                  </ul>
+              </div>
+            <div class="col-md-6">
+                  <ul class="list">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Contacts</a></li>
+                      <li><a href="#">Terms & Condition</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+              </div>
+          </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">RSS</a></li>
+              </ul>
+          </div>
+        <div class="col-md-3 footer-ns animated fadeInRight">
+            <h4>Newsletter</h4>
+              <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+              <p>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                    </span>
+                  </div><!-- /input-group -->
+               </p>
+          </div>
+      </div>
+  </footer>
+  <section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Jaison Jose</a></p></section>
 
   </body>
 

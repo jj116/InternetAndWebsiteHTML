@@ -8,9 +8,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="bootstrap1.css"/>
 
-
     <script type="text/javascript">
 
+    var names = [];
+    var price = [];
+    var storednames = [];
+    var storedquant = [];
+    var storedprice = [];
+    var storedtotprice = [];
+    var quantity=[];
+    var count =0;
+
+        function add_tocart()
+        {
+
+          names[count] = document.getElementById("poptitle").innerHTML;
+          price[count] = document.getElementById("popcontent").innerHTML;
+          quantity[count]="1";
+          alert(names);
+          count = count+1;
+          var storednames = JSON.parse(localStorage.getItem("item"));
+          var storedquant = JSON.parse(localStorage.getItem("quantity"));
+          var storedprice = JSON.parse(localStorage.getItem("unitprice"));
+          var storedtotprice = JSON.parse(localStorage.getItem("totprice"));
+          if(!storednames || !storedquant || !storedprice || storedtotprice)
+          {
+            localStorage.setItem("item", JSON.stringify(names));
+            localStorage.setItem("quantity",JSON.stringify(storedquant));
+            localStorage.setItem("unitprice", JSON.stringify(price));
+            localStorage.setItem("totprice", JSON.stringify(price));
+          }
+          storednames.push(names);
+          alert(storednames);
+          storedquant.push(quantity);
+          storedprice.push(price);
+          storedtotprice.push(price);
+          localStorage.setItem("item", JSON.stringify(storednames));
+          localStorage.setItem("quantity",JSON.stringify(storedquant));
+          localStorage.setItem("unitprice", JSON.stringify(storedprice));
+          localStorage.setItem("totprice", JSON.stringify(storedprice));
+        }
 
     $(function () {
     $('[data-toggle="popover"]').popover({
@@ -20,53 +57,16 @@
     content : '<textarea class="popover-textarea"></textarea>',
     template: '<div style="text-align:center;"class="popover"><div class="arrow"></div>'+
             '<h3 id="poptitle" style="text-align:center;"class="popover-title"></h3><div id="popcontent" class="popover-content">'+
-            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit">Add to cart</button>'+
+            '</div><div style="text-align:center;"class="popover-footer"><button type="button" class="btn btn-primary popover-submit"  onClick="add_tocart()">Add to cart</button>'+
             '</div>'
     })
     })
 
     $('.popover-dismiss').popover({
-  trigger: 'focus'
+    trigger: 'focus'
     })
-    function randomColor() {
-     return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
-    }
+    </script>
 
-
-
-    function setColor(){
-    document.getElementById('myDiv').style.backgroundColor = randomColor();
-    setTimeout(setColor, 2000);
-    }
-    anim();
-
-function anim() {
-    $("body").animate({
-        backgroundColor: "darkblue"
-    }, {
-        duration: 5000,
-        complete: function () {
-            $("body").animate({
-                backgroundColor: "darkgreen"
-            }, {
-                duration: 5000,
-                complete: function () {
-                    $("body").animate({
-                        backgroundColor: "darkred"
-                    }, {
-                        duration: 5000,
-                        complete: function () {
-                            anim();
-                        }
-                    });
-                }
-            });
-
-        }
-    });
-}
-
-</script>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -115,8 +115,8 @@ function anim() {
       <a class="navbar-brand" style="color:	#4484CE"href="#">Shopo</a>
       </div>
       <ul class="nav navbar-nav">
-      <li class="active"><a href="Bootstrap-Shopify.html">Home</a></li>
-      <li class="dropdown">
+      <li ><a href="Bootstrap-Shopify.html">Home</a></li>
+      <li class="active" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -141,8 +141,8 @@ function anim() {
   <ul id="rig" >
 
   <li>
-      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.12,999.00"
-      data-placement="right" data-content="GST tax:15%"
+      <a  tabindex="0"data-toggle="popover"data-trigger="focus" title="Kipsta B300 Adult Basketball Backboard - Black/Orange"
+      data-placement="right" data-content="Rs.12,999.00"
       class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51TxFWU9OFL.jpg">
           <span class="rig-overlay"></span>
@@ -150,8 +150,8 @@ function anim() {
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.2,490.00 "
-    data-placement="right" data-content="GST tax:15%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Wildcraft 60 Ltrs Green Rucksack (AM RK 2)"
+    data-placement="right" data-content="Rs.2,490.00 "
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61thN2fCJiL._SL1100_.jpg">
           <span class="rig-overlay"></span>
@@ -159,8 +159,8 @@ function anim() {
       </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 232.00  "
-    data-placement="right" data-content="GST tax:12%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="AVM CRB-012 Cricket Bat, Size 3"
+    data-placement="right" data-content="Rs. 232.00  "
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/31gstW5msgL.jpg">
           <span class="rig-overlay"></span>
@@ -168,8 +168,8 @@ function anim() {
         </a>
   </li>
   <li>
-    <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 19,156.000 "
-    data-placement="right" data-content="GST tax:10%"
+    <a tabindex="0"data-toggle="popover"data-trigger="focus" title=" Force 105 Tennis Racquet, 4_1/4/"
+    data-placement="right" data-content="Rs. 19,156.000"
     class="rig-cell" >
           <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/51BtpPnj2%2BL._SL1001_.jpg">
           <span class="rig-overlay"></span>
@@ -179,8 +179,8 @@ function anim() {
 </ul>
 <ul id="rig">
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.  6,135.68 "
-  data-placement="right" data-content="GST tax:Applicable"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Under Armour Men's Rocket 2 Basketball Shoe"
+  data-placement="right" data-content="Rs.6,135.00"
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/816hupYRG9L._UL1500_.jpg">
         <span class="rig-overlay"></span>
@@ -188,8 +188,8 @@ function anim() {
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.780.00 "
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Nivia Top Grip Basketball"
+  data-placement="right" data-content="Rs.780.00 "
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61f8cdSIcpL.jpg">
         <span class="rig-overlay"></span>
@@ -197,8 +197,8 @@ function anim() {
     </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs.480.00 "
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Gowin By Triumph ACE Black/Parrot Football Shoes"
+  data-placement="right" data-content="Rs.480.00 "
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/61SondsXAML._SL1100_.jpg">
         <span class="rig-overlay"></span>
@@ -206,8 +206,8 @@ function anim() {
       </a>
 </li>
 <li>
-  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Rs. 515.00 "
-  data-placement="right" data-content="GST tax:15%"
+  <a tabindex="0"data-toggle="popover"data-trigger="focus" title="Nivia Street Rubber Football, Size 5 (Black)"
+  data-placement="right" data-content="Rs. 515.00 "
   class="rig-cell" >
         <img class="rig-img" src="https://images-na.ssl-images-amazon.com/images/I/91RJ7mA38zL._SL1500_.jpg">
         <span class="rig-overlay"></span>
@@ -217,6 +217,58 @@ function anim() {
 
 
 </ul>
+
+<footer class="footer-bs">
+    <div class="row">
+      <div class="col-md-3 footer-brand animated fadeInLeft">
+            <p>Shopfy - Your one stop, for all your needs</p>
+            <p>©All rights reserved</p>
+        </div>
+      <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+                <ul class="pages">
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Shoes</a></li>
+                </ul>
+            </div>
+          <div class="col-md-6">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+      <div class="col-md-2 footer-social animated fadeInDown">
+          <h4>Follow Us</h4>
+          <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">RSS</a></li>
+            </ul>
+        </div>
+      <div class="col-md-3 footer-ns animated fadeInRight">
+          <h4>Newsletter</h4>
+            <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            <p>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+             </p>
+        </div>
+    </div>
+</footer>
+<section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Jaison Jose</a></p></section>
+
   </body>
 
 </html>

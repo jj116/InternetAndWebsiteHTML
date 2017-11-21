@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
 
-
-
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
 
@@ -57,7 +55,7 @@
     <a class="navbar-brand" style="color:	#4484CE"href="#">Shopo</a>
     </div>
     <ul class="nav navbar-nav">
-    <li class="active"><a href="Bootstrap-Shopify.html">Home</a></li>
+    <li ><a href="Bootstrap-Shopify.html">Home</a></li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
       <span class="caret"></span></a>
@@ -70,48 +68,48 @@
         <li><a href="sports.html">Sports</a></li>
       </ul>
     </li>
-    <li><a href="cart.html">Cart</a></li>
+    <li class="active"><a href="cart.html">Cart</a></li>
     <li><a href="#">About</a></li>
     </ul>
   </div>
-</nav>
-</head>
+  </nav>
+  <script>
 
-<body onload="myCreateFunction()">
-      <script>
+  function myCreateFunction() {
 
-      function myCreateFunction() {
+var table = document.getElementById("table");
+var rowCount = table.rows.length;
+var len=rowCount-4;
 
-    var table = document.getElementById("table");
-    var rowCount = table.rows.length;
-    var len=rowCount-4;
+var storedNames = JSON.parse(localStorage.getItem("item"));
+var price = JSON.parse(localStorage.getItem("unitprice"));
+var quantity = JSON.parse(localStorage.getItem("quantity"));
+var totprice = JSON.parse(localStorage.getItem("totprice"));
+alert(storedNames.length);
+alert(quantity);
+var i=0;
+for (i=0;i<storedNames.length;i++){
+  var row = table.insertRow(i+1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var quant = cell2.innerHTML;
+cell1.innerHTML = storedNames[i];
+cell2.innerHTML = quantity[i];
+cell3.innerHTML = totprice[i];
+cell4.innerHTML = totprice[i];
 
-    var storedNames = JSON.parse(localStorage.getItem("item"));
-    var price = JSON.parse(localStorage.getItem("unitprice"));
-    var quantity = JSON.parse(localStorage.getItem("quantity"));
-    var totprice = JSON.parse(localStorage.getItem("totprice"));
-    alert(storedNames.length);
-    var i=0;
-    for (i=0;i<storedNames.length;i++){
-      var row = table.insertRow(i+1);
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      var cell4 = row.insertCell(3);
-      var quant = cell2.innerHTML
-    cell1.innerHTML = storedNames[i];
-    cell2.innerHTML = quantity[i];
-    cell3.innerHTML = totprice[i];
-    cell4.innerHTML = totprice[i];
-
-  }
+}
 }
 
 
-      </script>
+  </script>
+</head>
+
+<body onload="myCreateFunction()">
 
   <div class="container">
-    <button onclick="myCreateFunction()">Try it</button>
   	<h1>Shopping Cart</h1><hr>
   	<table id="table" class="table table-striped table-hover table-bordered">
           <tbody>
@@ -123,11 +121,15 @@
               </tr>
               <tr>
                   <th colspan="3"><span class="pull-right">Sub Total</span></th>
-                  <th>subtotal</th>
+                  <th>Rs.19,546</th>
+              </tr>
+              <tr>
+                  <th colspan="3"><span class="pull-right">GST 15%</span></th>
+                  <th>Rs.456</th>
               </tr>
               <tr>
                   <th colspan="3"><span class="pull-right">Total</span></th>
-                  <th>total</th>
+                  <th>Rs.20,000</th>
               </tr>
               <tr>
                   <td><a href="Bootstrap-Shopify.html" class="btn btn-primary">Continue Shopping</a></td>
@@ -137,5 +139,57 @@
       </table>
 
   </div>
+
+  <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-3 footer-brand animated fadeInLeft">
+              <p>Shopfy - Your one stop, for all your needs</p>
+              <p>©All rights reserved</p>
+          </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+            <h4>Menu —</h4>
+            <div class="col-md-6">
+                  <ul class="pages">
+                      <li><a href="#">Shirts</a></li>
+                      <li><a href="#">Sports</a></li>
+                      <li><a href="#">Electronics</a></li>
+                      <li><a href="#">Books</a></li>
+                      <li><a href="#">Shoes</a></li>
+                  </ul>
+              </div>
+            <div class="col-md-6">
+                  <ul class="list">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Contacts</a></li>
+                      <li><a href="#">Terms & Condition</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+              </div>
+          </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">RSS</a></li>
+              </ul>
+          </div>
+        <div class="col-md-3 footer-ns animated fadeInRight">
+            <h4>Newsletter</h4>
+              <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+              <p>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                    </span>
+                  </div><!-- /input-group -->
+               </p>
+          </div>
+      </div>
+  </footer>
+  <section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Jaison Jose</a></p></section>
+
 </body>
 </html>
